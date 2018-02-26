@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$user = "root";
 			$pw = "CornComputerInc1*";
 			$db = "sistema";
@@ -13,6 +14,8 @@
 			mysql_select_db($db, $con) or die ("No se encontro la base de datos. ");
 
 =======
+=======
+>>>>>>> parent of fd9289d... Revert "commit inicial"
 =======
 >>>>>>> parent of fd9289d... Revert "commit inicial"
 =======
@@ -26,6 +29,9 @@
 			
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of fd9289d... Revert "commit inicial"
+=======
 >>>>>>> parent of fd9289d... Revert "commit inicial"
 =======
 >>>>>>> parent of fd9289d... Revert "commit inicial"
@@ -38,7 +44,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> parent of fd9289d... Revert "commit inicial"
 =======
 ?>
 >>>>>>> parent of fd9289d... Revert "commit inicial"
