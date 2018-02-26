@@ -4,6 +4,7 @@
 			$host = "localhost";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$user = "root";
 			$pw = "CornComputerInc1*";
 			$db = "sistema";
@@ -18,6 +19,8 @@
 =======
 =======
 >>>>>>> parent of fd9289d... Revert "commit inicial"
+=======
+>>>>>>> parent of fd9289d... Revert "commit inicial"
 			$user = "u722193362_root";
 			$pw = "03032014";
 			$db = "u722193362_date";
@@ -29,6 +32,10 @@
 		}
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+?>
+>>>>>>> parent of fd9289d... Revert "commit inicial"
+=======
 ?>
 >>>>>>> parent of fd9289d... Revert "commit inicial"
 =======

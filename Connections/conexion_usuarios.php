@@ -5,6 +5,7 @@
 $hostname_conexion_usuarios = "localhost";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 $database_conexion_usuarios = "sistema";
 $username_conexion_usuarios = "root";
 $password_conexion_usuarios = "CornComputerInc1*";
@@ -13,11 +14,17 @@ $conexion_usuarios = @mysql_pconnect($hostname_conexion_usuarios, $username_cone
 =======
 =======
 >>>>>>> parent of fd9289d... Revert "commit inicial"
+=======
+>>>>>>> parent of fd9289d... Revert "commit inicial"
 $database_conexion_usuarios = "u722193362_date";
 $username_conexion_usuarios = "u722193362_root";
 $password_conexion_usuarios = "03032014";
 $conexion_usuarios = @mysql_pconnect($hostname_conexion_usuarios, $username_conexion_usuarios, $password_conexion_usuarios) or trigger_error(mysql_error(),E_USER_ERROR); 
 <<<<<<< HEAD
+<<<<<<< HEAD
+?>
+>>>>>>> parent of fd9289d... Revert "commit inicial"
+=======
 ?>
 >>>>>>> parent of fd9289d... Revert "commit inicial"
 =======
