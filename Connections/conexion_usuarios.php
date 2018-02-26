@@ -3,8 +3,8 @@
 # Type="MYSQL"
 # HTTP="true"
 $hostname_conexion_usuarios = "localhost";
-$database_conexion_usuarios = "sistema";
-$username_conexion_usuarios = "root";
-$password_conexion_usuarios = "CornComputerInc1*";
-$conexion_usuarios = @mysql_pconnect($hostname_conexion_usuarios, $username_conexion_usuarios, $password_conexion_usuarios) or trigger_error(mysql_error(),E_USER_ERROR);
+$database_conexion_usuarios = "u722193362_date";
+$username_conexion_usuarios = "u722193362_root";
+$password_conexion_usuarios = "03032014";
+$conexion_usuarios = @mysql_pconnect($hostname_conexion_usuarios, $username_conexion_usuarios, $password_conexion_usuarios) or trigger_error(mysql_error(),E_USER_ERROR); 
 ?>
