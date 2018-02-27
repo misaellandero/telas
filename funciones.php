@@ -1,8 +1,11 @@
 <?php
+
+require 'conexionp.php';
+ 
 function conectar($servidor, $user, $pass, $name)
 {
 	$con = @mysql_connect($servidor, $user, $pass);
-	@mysql_select_db($name, $con);	
+	@mysql_select_db($name, $con);
 }
 
 function retConectar($servidor, $user, $pass)
@@ -12,5 +15,7 @@ function retConectar($servidor, $user, $pass)
 	return $con;
 
 }
+
+conectar($host,$user,$pw,$db);
 
 ?>

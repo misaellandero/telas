@@ -3,8 +3,7 @@
 //var_dump($_POST);die();
 
 require_once('../../funciones.php');
-conectar('localhost', 'u722193362_root','03032014','u722193362_date');
-
+ 
 session_start();
 $usuario = $_SESSION['MM_Username'];
 
@@ -18,7 +17,7 @@ $Cantidad= $_POST['cantidad'];
 $tipo = $_POST["tipo-movimiento"];
 
 for($i = 0; $i<count($codigo); $i++) {
-	
+
 	if ($Cantidad[$i] === 'All') {
 		$sql = "SELECT metros FROM rollos_telas WHERE codigo =  " . $codigo[$i];
 		$retval = mysql_query($sql);
@@ -34,7 +33,7 @@ for($i = 0; $i<count($codigo); $i++) {
 	}
 
 
-	$sql = "Insert Into hist_mov_ent_sal_telas (codigo_id,tipo_mov,cantidad,usuario) 
+	$sql = "Insert Into hist_mov_ent_sal_telas (codigo_id,tipo_mov,cantidad,usuario)
 		values('" . $codigo[$i] . "','".$tipo."', " .$Cantidad[$i] . ",'".$usuario."');";
 	$retval = mysql_query( $sql);
 	if (!$retval){
@@ -51,11 +50,11 @@ for($i = 0; $i<count($codigo); $i++) {
 
 	if ($tipo === "entrada") {
 		$sql = "INSERT INTO rollos_telas (codigo,id_art_telas,metros) VALUES (
-			'" . $codigo[$i] . "', '" . $id_art_tela[$i]. "', '".$Cantidad[$i]."')";		
+			'" . $codigo[$i] . "', '" . $id_art_tela[$i]. "', '".$Cantidad[$i]."')";
 	} else {
-		$sql = "Update rollos_telas SET metros = (metros ". ($tipo === "entrada" ? "+" : "-")." ". $Cantidad[$i] . ") WHERE codigo = '" . $codigo[$i] . "'" ;	
+		$sql = "Update rollos_telas SET metros = (metros ". ($tipo === "entrada" ? "+" : "-")." ". $Cantidad[$i] . ") WHERE codigo = '" . $codigo[$i] . "'" ;
 	}
-	
+
 	$retval = mysql_query( $sql);
 	if (!$retval){
 		echo mysql_error();
@@ -83,7 +82,7 @@ for($i = 0; $i<count($codigo); $i++) {
 }
 
 
-echo"<script type=\"text/javascript\">alert('El proceso se realizo con exito'); window.location='../../entrar.php';</script>"; 
+echo"<script type=\"text/javascript\">alert('El proceso se realizo con exito'); window.location='../../entrar.php';</script>";
 
 
 ?>

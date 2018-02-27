@@ -3,12 +3,11 @@ header('Content-type: application/json');
 	switch($_REQUEST['action']){
 		case 'entradasKeyUp':
 			require_once('../../funciones.php');
-			conectar('localhost', 'u722193362_root','03032014','u722193362_date');
-			$sql="SELECT * FROM rollos_telas WHERE codigo = '" . mysql_real_escape_string($_POST['codigoBarras']) . "'";
+			 $sql="SELECT * FROM rollos_telas WHERE codigo = '" . mysql_real_escape_string($_POST['codigoBarras']) . "'";
 			$rec=mysql_query($sql);
 			if ($row=mysql_fetch_array($rec)) {
 				//$row=mysql_fetch_array($rec);
-				echo json_encode(	
+				echo json_encode(
 					array(
 						'codigo' => $row['codigo'],
 						'id_art_telas' => $row['id_art_telas'],
@@ -36,7 +35,7 @@ header('Content-type: application/json');
 				$rec=mysql_query($sql);
 				if ($row=mysql_fetch_array($rec)) {
 					//$row=mysql_fetch_array($rec);
-					echo json_encode(	
+					echo json_encode(
 						array(
 							'contador' => empty($row['contador']) ? 0 : $row['contador'],
 							'id_art_telas' => $id ,
@@ -59,7 +58,7 @@ header('Content-type: application/json');
 					)
 				);
 			}
-			
+
 			break;
 		case 'verificaCodigo':
 			require_once('../../funciones.php');
@@ -68,7 +67,7 @@ header('Content-type: application/json');
 			$rec=mysql_query($sql);
 			if ($row=mysql_fetch_array($rec)) {
 				$corte = intval($row['corte']) + 1;
-				echo json_encode(	
+				echo json_encode(
 					array(
 						'corte' => $corte,
 						'select' => $sql,
@@ -87,12 +86,12 @@ header('Content-type: application/json');
 		case 'todoRollo':
 			require_once('../../funciones.php');
 			conectar('localhost', 'u722193362_root','03032014','u722193362_date');
-			
+
 			$sql = "SELECT metros FROM rollos_telas WHERE codigo =  '" . $_POST['codigoBarras'] . "'";
 			$rec=mysql_query($sql);
 			if ($row=mysql_fetch_array($rec)) {
 				//$row=mysql_fetch_array($rec);
-				echo json_encode(	
+				echo json_encode(
 					array(
 						'metros' => $row['metros'],
 						'success' => true
