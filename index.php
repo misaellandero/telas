@@ -80,10 +80,9 @@ if (isset($_POST['usuario'])) {
   <body>
 
     <div class="container">
-<div align="center"> <img src="../Signin Template for Bootstrap_files/logo.png"></div>
+<div align="center">  </div>
    <form class="form-signin" id="form_ingreso" name="form_ingreso" method="POST" action="<?php echo $loginFormAction; ?>">
         <h1 class="form-signin-heading">Panel de Control </h1> <p>
-        <h3>TynnosJeans</h3>
 
         <label for="inputEmail" class="sr-only">Usuario</label>
         <input name="usuario" type="text" id="usuario" class="form-control" value="Nombre del Usuario" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" ><a href="#" class=" icon user"/>
@@ -99,8 +98,7 @@ if (isset($_POST['usuario'])) {
 
     </div> <!-- /container -->
 
-<div align="center"><p><h2><a href="http://tynnosjeans.com/"> TynnosJeans.com </a></h2> &reg 2015<p>
-                     <p>Divición de Ingenieria</p></div>
+<div align="center"><p><h2>LanderCorp.mx </a></h2> &reg 2015<p> </div>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Signin Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
 

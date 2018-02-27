@@ -702,8 +702,7 @@ window.onload=function(){startTime();}
 </section><script type='text/javascript'>
 (function () {	var done = false;	var script = document.createElement('script'); script.async = true;	script.type = 'text/javascript';	script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) {	if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: 'c723c174-ef33-48e6-869b-c91e0be9243f', f: true }); done = true;	}	};	})();
 </script>
-<div align="center"> <p><h2><img src="../images/logo.png" alt="" width="5%"><a id="noprint" href="http://tynnosjeans.com/"> TynnosJeans.com </a><h4 id="titleContento">www.TynnosJeans.com</h4> &reg 2015<p>
-                     <p>Divicion de Ingenieria</p></div>
+<div align="center"> <p><h2><img src="../images/logo.png" alt="" width="5%"> <h4 id="titleContento">LanderCorp.mx</h4> &reg 2015<p> </div>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Signin Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
 
