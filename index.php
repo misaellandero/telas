@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php require_once('Connections/conexion_usuarios.php'); ?>
 <?php
 mysql_select_db($database_conexion_usuarios, $conexion_usuarios);
@@ -20,25 +22,25 @@ if (isset($_POST['usuario'])) {
   $loginUsername=$_POST['usuario'];
   $password=$_POST['contrasena'];
   $MM_fldUserAuthorization = "";
-  $MM_redirectLoginSuccess = "entrar.php";
-  $MM_redirectLoginFailed = "index.php";
+  $MM_redirectLoginSuccess = "../pc.php";
+  $MM_redirectLoginFailed = "../index.php";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_conexion_usuarios, $conexion_usuarios);
-
+  
   $LoginRS__query=sprintf("SELECT user, password FROM usuarios WHERE user='%s' AND password='%s'",
-    get_magic_quotes_gpc() ? $loginUsername : addslashes($loginUsername), get_magic_quotes_gpc() ? $password : addslashes($password));
-
+    get_magic_quotes_gpc() ? $loginUsername : addslashes($loginUsername), get_magic_quotes_gpc() ? $password : addslashes($password)); 
+   
   $LoginRS = mysql_query($LoginRS__query, $conexion_usuarios) or die(mysql_error());
   $loginFoundUser = mysql_num_rows($LoginRS);
   if ($loginFoundUser) {
      $loginStrGroup = "";
-
+    
     //declare two session variables and assign them
     $_SESSION['MM_Username'] = $loginUsername;
-    $_SESSION['MM_UserGroup'] = $loginStrGroup;
+    $_SESSION['MM_UserGroup'] = $loginStrGroup;       
 
     if (isset($_SESSION['PrevUrl']) && false) {
-      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];
+      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];  
     }
     header("Location: " . $MM_redirectLoginSuccess );
   }
@@ -47,9 +49,6 @@ if (isset($_POST['usuario'])) {
   }
 }
 ?>
-<!DOCTYPE html>
-
-
 <!-- saved from url=(0040)http://getbootstrap.com/examples/signin/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
@@ -81,10 +80,10 @@ if (isset($_POST['usuario'])) {
   <body>
 
     <div class="container">
-<div align="center">  </div>
+<div align="center"> <img src="../Signin Template for Bootstrap_files/logo.png"></div>
    <form class="form-signin" id="form_ingreso" name="form_ingreso" method="POST" action="<?php echo $loginFormAction; ?>">
         <h1 class="form-signin-heading">Panel de Control </h1> <p>
-
+        <h3>TynnosJeans</h3>
 
         <label for="inputEmail" class="sr-only">Usuario</label>
         <input name="usuario" type="text" id="usuario" class="form-control" value="Nombre del Usuario" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" ><a href="#" class=" icon user"/>
@@ -100,12 +99,11 @@ if (isset($_POST['usuario'])) {
 
     </div> <!-- /container -->
 
-<div align="center">
- 
-</div>
+<div align="center"><p><h2><a href="http://tynnosjeans.com/"> TynnosJeans.com </a></h2> &reg 2015<p>
+                     <p>Divición de Ingenieria</p></div>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Signin Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
-
+  
 <?php
 mysql_free_result($consulta_usuarios);
 ?>
