@@ -1,7 +1,10 @@
 <?php
 
 require_once('../funciones.php');
- 
+require '../conexionp.php';
+
+conectar($host,$user,$pw,$db);
+
 //Recibir
 $descripsion = strip_tags($_POST['descripsion']);
 

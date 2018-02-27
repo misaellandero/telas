@@ -3,7 +3,10 @@
 //var_dump($_POST);die();
 
 require_once('../../funciones.php');
- 
+require '../../conexionp.php';
+
+conectar($host,$user,$pw,$db);
+
 session_start();
 $usuario = $_SESSION['MM_Username'];
 

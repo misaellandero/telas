@@ -2,7 +2,10 @@
 
 <?php
 
-require_once('../funciones.php');
+require_once('funciones.php');
+require '../conexionp.php';
+
+conectar($host,$user,$pw,$db);
 
 //Recibir
 $ID = strip_tags($_POST['ID']);

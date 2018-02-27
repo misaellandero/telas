@@ -3,7 +3,11 @@ header('Content-type: application/json');
 	switch($_REQUEST['action']){
 		case 'entradasKeyUp':
 			require_once('../../funciones.php');
-			 $sql="SELECT * FROM rollos_telas WHERE codigo = '" . mysql_real_escape_string($_POST['codigoBarras']) . "'";
+
+			require '../../conexionp.php';
+
+			conectar($host,$user,$pw,$db);
+$sql="SELECT * FROM rollos_telas WHERE codigo = '" . mysql_real_escape_string($_POST['codigoBarras']) . "'";
 			$rec=mysql_query($sql);
 			if ($row=mysql_fetch_array($rec)) {
 				//$row=mysql_fetch_array($rec);
@@ -26,7 +30,8 @@ header('Content-type: application/json');
 			break;
 		case 'entradas':
 			require_once('../../funciones.php');
-			conectar('localhost', 'u722193362_root','03032014','u722193362_date');
+require '../../conexionp.php';
+						conectar($host,$user,$pw,$db);
 			$sql="SELECT id FROM art_telas WHERE codigo = '" . mysql_real_escape_string($_POST['codigoBarras']) . "'";
 			$rec=mysql_query($sql);
 			if ($row=mysql_fetch_array($rec)) {
@@ -62,7 +67,8 @@ header('Content-type: application/json');
 			break;
 		case 'verificaCodigo':
 			require_once('../../funciones.php');
-			conectar('localhost', 'u722193362_root','03032014','u722193362_date');
+			require '../../conexionp.php';
+			conectar($host,$user,$pw,$db);
 			$sql='SELECT MAX(CAST(corte as SIGNED)) as corte FROM art_telas WHERE proveedor = "' . $_POST['proveedor'] . '" AND tipo = "' . $_POST['tipo'] . '" AND nombre = "' . $_POST['tela'] . '"';
 			$rec=mysql_query($sql);
 			if ($row=mysql_fetch_array($rec)) {
@@ -85,7 +91,8 @@ header('Content-type: application/json');
 			break;
 		case 'todoRollo':
 			require_once('../../funciones.php');
-			conectar('localhost', 'u722193362_root','03032014','u722193362_date');
+			require '../../conexionp.php';
+						conectar($host,$user,$pw,$db);
 
 			$sql = "SELECT metros FROM rollos_telas WHERE codigo =  '" . $_POST['codigoBarras'] . "'";
 			$rec=mysql_query($sql);

@@ -17,7 +17,8 @@ foreach ($modulos as $modulo)
       }
   }
     if ($verificado === false) {
-      header ('Location: index.php');
+
+      header ('Location:index.php');
 }
 
 
@@ -65,7 +66,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
   unset($_SESSION['MM_UserGroup']);
   unset($_SESSION['PrevUrl']);
 
-  $logoutGoTo = "index.php";
+  $logoutGoTo = " index.php";
   if ($logoutGoTo) {
     header("Location: $logoutGoTo");
     exit;
@@ -137,6 +138,7 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 // Versión 3. ultima actualización 21/11/2014   -->
 
 
+
 <head>
 
   <link rel="icon" href="../Signin Template for Bootstrap_files/favicon.png">
@@ -151,9 +153,33 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
   <link rel="stylesheet" type="text/css" href="styles/jquery-impromptu.css">
 
 
+	<script src="scripts/jquery.dataTables.js"></script>
+	<script src="scripts/jquery-ui-1.10.3.custom.js"></script>
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/functions.js"></script>
+	<script src="scripts/prefixfree.min.js"></script>
+	<script src="scripts/datatables.js"></script>
+	<script src="scripts/jjquery-ui.js"></script>
+	<script src="scripts/jquery-barcode.js"></script>
+  <script src="scripts/jquery-impromptu.js"></script>
+  <script src="/PC/js/canvasResize/canvasResize.js"></script>
+  <script src="/PC/js/canvasResize/zepto.min.js"></script>
+  <script src="/PC/js/canvasResize/binaryajax.js"></script>
+  <script src="/PC/js/canvasResize/exif.js"></script>
+
+
 
  <link href="../css/fontello.css" rel="stylesheet">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./Signin Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
+
+
 <link rel="stylesheet" type="text/css" href="../css/imprimir.css" media="print" />
 
 <!--iOS -->
@@ -207,7 +233,6 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
   }
   </style>
 </head>
-
 <body class="demo">
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -224,12 +249,12 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 
     </div>
 
-    <div id="content" class="container-fluid">
+    <div id="content">
 
 
 
 <header>
-	      <h1>Inventario Telas</h1>
+	      <h1><span class="icon-buffer"></span>&nbsp; &nbsp; Inventario Telas</h1>
 
      <!-- linea del usuario -->
 <div id="Userdiv">
@@ -247,7 +272,8 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
                 <span class="icon-ok"></span>&nbsp;
 
            </strong>
-           <a href="<?php echo $logoutAction ?>">salir
+           <a href="<?php echo $logoutAction ?>">&nbsp;Salir&nbsp;
+             <span class="icon-cancel-circled"></span>
            </a>
 
 
@@ -278,7 +304,8 @@ function checkTime(i)
 window.onload=function(){startTime();}
 </script>
 <div id="reloj" style="font-size:20px;"></div>
-</div></h5> </header>
+</div></h5>
+</header>
 </script>
  <ul id="menu" class="nav nav-tabs">
                   <li ><a href="#" <?php echo  (validar_pestana('fabrics', 'registrar')) ? '' : 'style="display:none"'; ?>><span class="icon-plus-squared-alt"></span> Registrar</a></li>
@@ -500,7 +527,7 @@ window.onload=function(){startTime();}
 				</div>
 			</article>
 			<article id="aSearch" >
-				<table id="tSearch" class="table" cellspacing="1">
+				<table id="tSearch" cellspacing="1">
 	<caption>Lista de Telas</caption>
 	<thead>
 				<tr>
@@ -672,8 +699,11 @@ window.onload=function(){startTime();}
           </div>
 
      </article>
-</section>
-
+</section><script type='text/javascript'>
+(function () {	var done = false;	var script = document.createElement('script'); script.async = true;	script.type = 'text/javascript';	script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) {	if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: 'c723c174-ef33-48e6-869b-c91e0be9243f', f: true }); done = true;	}	};	})();
+</script>
+<div align="center"> <p><h2><img src="../images/logo.png" alt="" width="5%"><a id="noprint" href="http://tynnosjeans.com/"> TynnosJeans.com </a><h4 id="titleContento">www.TynnosJeans.com</h4> &reg 2015<p>
+                     <p>Divicion de Ingenieria</p></div>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Signin Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
 
@@ -684,17 +714,6 @@ window.onload=function(){startTime();}
 
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
   <script src="../js/main.js"></script>
-
-  	<script src="scripts/jquery.dataTables.js"></script>
-  	<script src="scripts/jquery-ui-1.10.3.custom.js"></script>
-  	<script src="scripts/jquery.js"></script>
-  	<script src="scripts/functions.js"></script>
-  	<script src="scripts/prefixfree.min.js"></script>
-  	<script src="scripts/datatables.js"></script>
-  	<script src="scripts/jjquery-ui.js"></script>
-  	<script src="scripts/jquery-barcode.js"></script>
-    <script src="scripts/jquery-impromptu.js"></script>
-
 
 </body>
 </html>

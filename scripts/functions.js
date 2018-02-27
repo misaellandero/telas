@@ -1,18 +1,11 @@
-//  Sistema de Inventarios Para la empresa Tynno Jeans 
-// Tec. en Informática Francisco Misael Landero Ychante 
-// Versión 3. ultima actualización 21/11/2014 
+//  Sistema de Inventarios Para la empresa Tynno Jeans
+// Tec. en Informática Francisco Misael Landero Ychante
+// Versión 3. ultima actualización 21/11/2014
 
-$(document).ready(function() {	
+$(document).ready(function() {
 
 
-function ImageExist(url) 
-{
-   var image = new Image(); 
-image.src = "http://localhost:81/stock/" + url;
-if (image.width === 0) {
-  alert("no image");
-}
-}
+
 
 // Imagenes Rotas o link caido
 
@@ -35,7 +28,7 @@ window.onload=RevisarImagenesRotas;
 
 // Previsualización de La imagen cargada
 // Para generar una vista previa en el formulario de carga
- 
+
            function mostrarImagen(input) {
  if (input.files && input.files[0]) {
   var reader = new FileReader();
@@ -47,16 +40,16 @@ window.onload=RevisarImagenesRotas;
  }
 }
 //Etiqueta origen
- 
+
 $("#archivo").change(function(){
  mostrarImagen(this);
 });
 
 
 // Fin
-	
-// Scrip Generador de Codigos de Barra ean13	
-	
+
+// Scrip Generador de Codigos de Barra ean13
+
 var menuTimer = [];
 						var menuLocked = [];
 						function menuHideAndLockYoyo($this){
@@ -90,12 +83,12 @@ $(".menu-item").each(function(){
 										}
 									);
 								});
-								
+
 								$(".menu-item-block-item")
 									.click(function(){ window.location.href = $("a", $(this)).attr("href"); })
 									.hover(function(){$(this).addClass("hover");}, function(){$(this).removeClass("hover");});
-									
-									
+
+
 								$(".language")
 								    .each(function(){
 								        var $this = $(this);
@@ -122,10 +115,10 @@ $("#ean13Message")
 					$("#ean13Checksum").html("");
 				}
 			});
-		
+
 		//$("#ean13Target").barcode("2109876543210", "ean13");
-		
-//Selección de la Etiquete que contiene el codigo en numero de 12 digitos		
+
+//Selección de la Etiquete que contiene el codigo en numero de 12 digitos
 		$("#Id")
 			.keyup(function(){
 				var $this = $(this),
@@ -146,7 +139,7 @@ $("#ean13Message")
 				} else {
 					$("#ean13Target").html("");
 				}
-			});	
+			});
 
 		});
 
@@ -168,7 +161,7 @@ $("#ean13Message")
 
 	$(this).addClass('active').prevAll('li').removeClass('active');
 		$(this).addClass('active').nextAll('li').removeClass('active');
-		
+
 		$('section article').hide();
 		$('section article:eq(1)').show();
 
@@ -180,7 +173,7 @@ $("#ean13Message")
 
 		$(this).addClass('active').prevAll('li').removeClass('active');
 		$(this).addClass('active').nextAll('li').removeClass('active');
-		
+
 		$('section article').hide();
 		$('section article:eq(2)').show();
 
@@ -192,7 +185,7 @@ $("#ean13Message")
 
 		$(this).addClass('active').prevAll('li').removeClass('active');
 		$(this).addClass('active').nextAll('li').removeClass('active');
-		
+
 		$('section article').hide();
 		$('section article:eq(3)').show();
 
@@ -204,7 +197,7 @@ $("#ean13Message")
 
 		$(this).addClass('active').prevAll('li').removeClass('active');
 		$(this).addClass('active').nextAll('li').removeClass('active');
-		
+
 		$('section article').hide();
 		$('section article:eq(4)').show();
 
@@ -216,7 +209,7 @@ $("#ean13Message")
 
 		$(this).addClass('active').prevAll('li').removeClass('active');
 		$(this).addClass('active').nextAll('li').removeClass('active');
-		
+
 		$('section article').hide();
 		$('section article:eq(5)').show();
 
@@ -228,7 +221,7 @@ $("#ean13Message")
 
 		$(this).addClass('active').prevAll('li').removeClass('active');
 		$(this).addClass('active').nextAll('li').removeClass('active');
-		
+
 		$('section article').hide();
 		$('section article:eq(6)').show();
 
@@ -237,7 +230,7 @@ $("#ean13Message")
 
 	})
 //Fin
-		
+
 		$.ajax({
 			url: './includes/process.php',
 			type: 'post',
@@ -247,7 +240,7 @@ $("#ean13Message")
 				if (data !== null && data.success) {
 					var totalRollos = 0, totalMetros = 0;
 					$.each(data, function (index, record) {
-						if ($.isNumeric(index)) { 
+						if ($.isNumeric(index)) {
 							var row = $("<tr data-rollos='" + record.rollos + "' data-id=" + record.id + " />");
 							$("<td />").text(record.codigo).appendTo(row);
 							$("<td data-id-proveedor = " + record.num_proveedor + " />").text(record.proveedor).appendTo(row);
@@ -271,13 +264,13 @@ $("#ean13Message")
 					$("#totales-busqueda-fabrics").html('Totales: ' + totalRollos + ' Rollos || ' + totalMetros + ' Metros');
 				}
 
-						
+
 	var table = $('table').dataTable({
 			"bJQueryUI" : true,
 			"bRetrieve" : true,
 			"iDisplayLength": 20,
- 			"aaSorting": [[ 4, "desc" ]] 
-		})	
+ 			"aaSorting": [[ 4, "desc" ]]
+		})
 
 	$('#tSearch_filter > label > input[type="text"]').keyup(function(){
 		var totalRollos = 0, totalMetros = 0;
@@ -299,7 +292,7 @@ $("#ean13Message")
 			success: function (data) {
 				if (data !== null && data.success) {
 					$.each(data, function (index, record) {
-						if ($.isNumeric(index)) { 
+						if ($.isNumeric(index)) {
 							var row = $("<tr data-id=" + record.id + " />");
 							$("<td />").text(record.id).appendTo(row);
 							$("<td />").text(record.codigo).appendTo(row);
@@ -315,8 +308,8 @@ $("#ean13Message")
 					 "paging":   false,
         "ordering": false,
         "info":     false
-                     
-				})*/	
+
+				})*/
 
 				var etiquetas = function(fecha){
 					fecha = fecha || 'Todos';
@@ -345,13 +338,13 @@ $("#ean13Message")
 										+ '<div class="rollo-codigo-busqueda"></div>'
 										+ '<div class="item-compo" style="display:none"><span>' + tr.find("td:eq(5)").html() + '</span></div>'
 										+ '<div class="item-anchura" style="display:none">' + tr.find("td:eq(7)").html() + ' de Anchura</span></div>'
-										+ '<input type="button" class="btn btn-success imprimir" value="Imprimir"></div></div>';																
+										+ '<input type="button" class="btn btn-success imprimir" value="Imprimir"></div></div>';
 
 									if (fecha === 'Todos' && $.inArray(item.fecha_creacion, fechas) < 0) {
 										fechas.push(item.fecha_creacion);
 										options += '<option value="' + item.fecha_creacion + '">' + item.fecha_creacion + '</option>';
 									}
-									
+
 									totalMetros += parseInt(item.metros);
 									totalRollos++;
 
@@ -371,7 +364,7 @@ $("#ean13Message")
 								$(this).find('.rollo-codigo-busqueda').barcode(codigo, 'ean13');
 								$(this).find('.imprimir').click(function(){
 									var ob = $(this).closest('.rollos-busqueda').clone();
-									
+
 									ob.find('.imprimir').remove();
 									ob.find(".tipo").show();
 									ob.find(".color").show();
@@ -381,7 +374,7 @@ $("#ean13Message")
 									w=window.open();
 									w.document.write($("head").html());
 									w.document.write("<div style='margin-left:20px;margin-top:-60px;'></div>")
-									
+
 									w.document.write("<table style='text-align:center;margin-top:-50px'><tr><td style='height:288px;white-space:nowrap'>" + ob.html() + "</td></tr></table>");
 									w.document.write("<div><input type='button' value='Imprimir' class='btn btn-success' onclick='window.print();'></div>");
 								})
@@ -399,7 +392,7 @@ $("#ean13Message")
 			            $(this).attr('style' , 'background-color: whitesmoke');
 			        } )
 			        .on( 'mouseleave','tr', function () {
-			            $(this).attr('style' , '');   
+			            $(this).attr('style' , '');
 			        } );
 
 			    var tr;
@@ -416,24 +409,24 @@ $("#ean13Message")
 
 					$("#ancho-update-ancho").val(tr.find("td:eq(7)").html());
 					$("#color-update-color").val(tr.find("td:eq(8)").html());
-				
+
 
 
 					$('#aSearch .row-fluid').show();
-					$("#img_destino_articulo_imprimir").attr("src","/PC/fabrics/" + tr.find("td:eq(9)").html()).error(function() {
+					$("#img_destino_articulo_imprimir").attr("src",tr.find("td:eq(9)").html()).error(function() {
     					$(this).attr("src","images/ind.jpg");
-					});
+					});;
 
-					var tit = "<h2>Tela " + tr.find("td:eq(0)").html() + "</h2>" 
+					var tit = "<h2>Tela " + tr.find("td:eq(0)").html() + "</h2>"
 					+ "<h4>" + tr.find("td:eq(5)").html()
 					+ "<h4>" + tr.find("td:eq(1)").html() + " " + tr.find("td:eq(2)").html() + "</h4>"
 					+ "<h4>" + tr.find("td:eq(3)").html() + " " + tr.find("td:eq(4)").html() + "</h4>";
 
-					$("#titulo-telas-busqueda").html(tit);					
+					$("#titulo-telas-busqueda").html(tit);
 
 					etiquetas();
 
-				});				
+				});
 
 				$("#fechas-imprimir").change(function(event) {
 					etiquetas($(this).val());
@@ -450,10 +443,10 @@ $("#ean13Message")
 		cod.find(".color").show();
 		cod.find(".item-anchura").show();
 		cod.find('.imprimir').remove();
-		
+
 		cod.find(".item-compo").attr("style", "");
 
-		w=window.open();		
+		w=window.open();
 		w.document.write($("head").html());
 		w.document.write("<div style='margin-left:20px;margin-top:-60px;'></div>")
 		w.document.write("<table style='text-align:center;margin-top:-50px'><tr><td style='white-space:nowrap'>" + cod.html() + '<hr style="border:1px dashed black;"></td></tr></table>');
@@ -523,8 +516,8 @@ w.document.write("<div style='margin-left:20px;margin-top:-60px;'></div>")
 
 
 
-$("#searchBarcode").barcode(MYVALOR, "ean13",{barWidth:1, barHeight:50, output: "canvas"}); 
-	
+$("#searchBarcode").barcode(MYVALOR, "ean13",{barWidth:1, barHeight:50, output: "canvas"});
+
 	function changeImage(input, form, divContent, rotar) {
 
 		file = input.files[0];
@@ -536,7 +529,7 @@ $("#searchBarcode").barcode(MYVALOR, "ean13",{barWidth:1, barHeight:50, output: 
 	        quality: 50,
 	        rotate: rotar,
 	        callback: function(data, width, height) {
-	        	
+
 	        	form.find('.data_img').val(data);
 	        	form.find('.name_img').val(file.name);
 
@@ -549,19 +542,19 @@ $("#searchBarcode").barcode(MYVALOR, "ean13",{barWidth:1, barHeight:50, output: 
 	}
 
 	$('#registro-producto').find('.rotar-imagen').click(function(event) {
-		
+
 		var form = $(this).closest('form');
 		var input = form.find('#archivo')[0];
 		var divContent = "img_destino";
 		var rotacion = $(this).data('rotar');
-		
+
 		if(input.files.length > 0) {
 			changeImage(input, form, divContent, rotacion);
 		} else {
 			alert("Por favor agrega una imagen primero");
 		}
 	});
-	
+
 	$('#archivo').change(function(e) {
 
 		var input = this;
@@ -583,12 +576,12 @@ $("#searchBarcode").barcode(MYVALOR, "ean13",{barWidth:1, barHeight:50, output: 
 	});
 
 	$('#registroi').find('.rotar-imagen').click(function(event) {
-		
+
 		var form = $(this).closest('form');
 		var input = form.find('#archivo-update')[0];
 		var divContent = "img_destino_articulo_imprimir";
 		var rotacion = $(this).data('rotar');
-		
+
 		if(input.files.length > 0) {
 			changeImage(input, form, divContent, rotacion);
 		} else {
@@ -643,7 +636,7 @@ $("#searchBarcode").barcode(MYVALOR, "ean13",{barWidth:1, barHeight:50, output: 
 		    type: 'POST',
 		    success: function(data){
 		        alert(data);
-		        window.location='entrar.php'		        
+		        window.location='entrar.php'
 				// event.preventDefault();
 		    },
 		    error: function (jqXHR, textStatus, errorThrown){
@@ -683,7 +676,7 @@ $("#searchBarcode").barcode(MYVALOR, "ean13",{barWidth:1, barHeight:50, output: 
 		    success: function(data){
 		        window.print();
 		        alert(data);
-		        window.location='entrar.php'		        
+		        window.location='entrar.php'
 				// event.preventDefault();
 		    },
 		    error: function (jqXHR, textStatus, errorThrown){

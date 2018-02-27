@@ -5,9 +5,9 @@
 				try {
 					$conn = require_once 'connect.php';
 
-					$sql = "SELECT *, (SELECT id FROM proveedor WHERE descripcion = proveedor LIMIT 1) 
-					as num_proveedor, 
-					(SELECT COUNT(*) FROM rollos_telas WHERE id_art_telas =  tela.id) as rollos 
+					$sql = "SELECT *, (SELECT id FROM proveedor WHERE descripcion = proveedor LIMIT 1)
+					as num_proveedor,
+					(SELECT COUNT(*) FROM rollos_telas WHERE id_art_telas =  tela.id) as rollos
 					FROM art_telas as tela";
 					$result = $conn->prepare($sql) or die ($sql);
 
@@ -48,7 +48,7 @@
 					if ($_POST['fecha'] === 'Todos') {
 						$sql = "SELECT * FROM rollos_telas WHERE id_art_telas = " . $_POST['id-tela'];
 					} else {
-						$sql = "SELECT * FROM rollos_telas WHERE id_art_telas = " . $_POST['id-tela'] . 
+						$sql = "SELECT * FROM rollos_telas WHERE id_art_telas = " . $_POST['id-tela'] .
 						" AND DATE_FORMAT(fecha_creacion,'%Y-%m-%d') = '" . $_POST['fecha'] . "'";
 					}
 
@@ -57,7 +57,7 @@
 					if (!$result->execute()) return false;
 
 					$json = array();
-					if ($result->rowCount() > 0) {						
+					if ($result->rowCount() > 0) {
 						while ($row = $result->fetch()) {
 							$fecha = new DateTime($row['fecha_creacion']);
 							$json[] = array(
@@ -67,14 +67,14 @@
 								'fecha_creacion' => $fecha->format('Y-m-d'),
 							);
 						}
-						
+
 						echo json_encode($json);
 					}
 				} catch (PDOException $e) {
 					echo 'Error: '. $e->getMessage();
 				}
 			break;
-		}		
+		}
 	}
 
 ?>
