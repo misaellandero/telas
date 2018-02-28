@@ -1,4 +1,4 @@
-<script language="javascript"> 
+<script language="javascript">
 
     function sumatoriaSalidasFabrics() {
         var totalRollos = 0, totalMetros = 0;
@@ -20,7 +20,7 @@
                 title: 'Capture Codigo',
                 html:'<label><input id="codigo-a-buscar-salida">Codigo del Rollo</label>'
                     + '<div id ="metros-opciones"><label><input type="checkbox" id="todo-rollo-salida">Todo el rollo?</label>'
-                    + '<label><input id="metros-sa">Metros del rollo</label>',
+                    + '<label><input id="metros-sa">Metros del rollo</label><label></label>',
                 buttons: { Agregar: 1, Listo: 2 },
                 focus: 0,
                 submit:function(e,v,m,f){
@@ -57,7 +57,7 @@
                                         }
 
                                         $("#form-datos-salidas").find("#ingreso-datos-salida > tbody").append(campos);
-                                        
+
 
                                         $("#error-registro-salida").html('');
 
@@ -88,7 +88,7 @@
                     e.preventDefault();
 
                     }
-                    
+
                 }
             }
 
@@ -108,9 +108,9 @@
                             type: 'post',
                             data: { 'codigoBarras': $("#codigo-a-buscar-salida").val(), 'action' : 'todoRollo'},
                             dataType: 'json',
-                            success: function (data) {        
+                            success: function (data) {
                                 if (data.success) {
-                                    ob.find('#metros-sa').val(data.metros);    
+                                    ob.find('#metros-sa').val(data.metros);
                                 } else {
                                     alert("Codigo no encontrado, favor de intentar nuevamente. " + data.error);
                                 }
@@ -147,7 +147,7 @@
             }
         });
     });
-   
+
 
 </script>
 

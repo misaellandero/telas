@@ -18,7 +18,7 @@ if($existe = @mysql_fetch_object($query))
 
 
 }else{
-	$meter = @mysql_query('INSERT INTO tela (Id, Descripcion) values ("'.$Id.'", "'.mysql_real_escape_string($descripsion).'")');
+	$meter = @mysql_query('INSERT INTO tela ( Descripcion) values ("'.mysql_real_escape_string($descripsion).'")');
 	if($meter)
 	{
 	echo"<script type=\"text/javascript\">alert('El articulo ha sido registrado con exito'); window.location='../entrar.php';</script>";

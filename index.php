@@ -190,7 +190,7 @@ $res_pestanas = mysql_query($sql);
         <label for="inputEmail" class="sr-only">Usuario</label>
         <input name="usuario" type="text" id="usuario" class="form-control" value="Nombre del Usuario" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" ><a href="#" class=" icon user"/>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input  class="form-control" name="contrasena"  id="contrasena" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><a href="#" class=" icon lock">
+        <input  class="form-control" name="contrasena"  id="contrasena" type="password"   onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><a href="#" class=" icon lock">
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Recordarme
