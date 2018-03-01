@@ -256,8 +256,8 @@ $("#ean13Message")
 							row.appendTo("#tSearch");
 
 							if ($.isNumeric(record.metros) && $.isNumeric(record.rollos)) {
-								totalMetros += parseInt(record.metros);
-								totalRollos += parseInt(record.rollos);
+								totalMetros += parseFloat(record.metros);
+								totalRollos += parseFloat(record.rollos);
 							}
 						}
 					})
@@ -277,7 +277,7 @@ $("#ean13Message")
 		$('table > tbody > tr').each(function(){
 			if ($.isNumeric($(this).find('td:eq(4)').html()) && $.isNumeric($(this).data('rollos'))) {
 				totalMetros += parseFloat($(this).find('td:eq(4)').html());
-				totalRollos += parseInt($(this).data('rollos'));
+				totalRollos += parseFloat($(this).data('rollos'));
 			}
 		});
 
@@ -345,7 +345,7 @@ $("#ean13Message")
 										options += '<option value="' + item.fecha_creacion + '">' + item.fecha_creacion + '</option>';
 									}
 
-									totalMetros += parseInt(item.metros);
+									totalMetros += parseFloat(item.metros);
 									totalRollos++;
 
 								});

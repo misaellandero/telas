@@ -330,7 +330,7 @@ window.onload=function(){startTime();}
             var sumatoriaRegistroFabrics = function() {
               var totalRollos = 0, totalMetros = 0;
               $(".rollos-registro").each(function(key, value) {
-                totalMetros += parseInt($(this).find(".metros-rollos-registro").val());
+                totalMetros += parseFloat($(this).find(".metros-rollos-registro").val());
                 totalRollos++;
               });
 
@@ -472,7 +472,7 @@ window.onload=function(){startTime();}
               var primerosDigitos = formRegistro.find("#Id").val();
               var registro = $(this).closest('.rollos-registro');
               var idRegistro = registro.find('.id-rollo-registro');
-             
+
                 var consecutivo = registro.find('.consecutivo-registro').val();
                 idRegistro.val(idRegistro.val() + consecutivo);
                 idRegistro.trigger('keyup');
