@@ -472,12 +472,11 @@ window.onload=function(){startTime();}
               var primerosDigitos = formRegistro.find("#Id").val();
               var registro = $(this).closest('.rollos-registro');
               var idRegistro = registro.find('.id-rollo-registro');
-              idRegistro.val(primerosDigitos + $(this).val());
-              if (idRegistro.val().length == 9) {
+             
                 var consecutivo = registro.find('.consecutivo-registro').val();
                 idRegistro.val(idRegistro.val() + consecutivo);
                 idRegistro.trigger('keyup');
-              }
+
               registro.find('.id-rollo-hidden').val(idRegistro.val());
             })
 
