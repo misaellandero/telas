@@ -410,7 +410,7 @@ window.onload=function(){startTime();}
               var statesDemos = {
                   state0: {
                       title: 'Capture Metros',
-                      html:'<label><input id="metros-ingresar-registro" maxlength="3">Metros</label>',
+                      html:'<label><input id="metros-ingresar-registro" >Metros</label>',
                       buttons: { Agregar: 1, Listo: 2 },
                       focus: 0,
                       submit:function(e,v,m,f){
@@ -422,7 +422,7 @@ window.onload=function(){startTime();}
                               $obj = $(m[0]);
                               metros = $obj.find('#metros-ingresar-registro').val();
 
-                              if (metros.length === 3 && $.isNumeric(metros)) {
+                              if (metros > 0) {
                                 var primerosDigitos = formRegistro.find("#Id").val();
 
                                 var consecutivo = $('.consecutivo-registro').size() + 1;
