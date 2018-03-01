@@ -4,7 +4,7 @@ conectar('localhost', 'u722193362_date','03032014','u722193362_root');
 ?>
 
 <form id="registro-producto" action="registro.php" method="POST" enctype="multipart/form-data" >
-  
+
 
   <label>Clave Principal</label><p>
         <input id="Id" name="Id"  type="int(11)" maxlength="13" required disabled/>
@@ -27,7 +27,7 @@ while($row=mysql_fetch_array($rec))
 ?>
 </select>
  <p>
- 
+
   <label> Tipo</label><p>
         <select  id="tipo" name="tipo" type="text" required/>
 <?php
@@ -56,7 +56,7 @@ while($row=mysql_fetch_array($rec))
 ?>
 </select>
 <p>
-	<label>Composicion de Tela</label><p>	
+	<label>Composicion de Tela</label><p>
 	<input id="compo-telap1" name="compo-telap1"> %
 	<select id="compo-tela-s1" name="compo-tela-s1">
 		<option></option>
@@ -89,7 +89,7 @@ while($row=mysql_fetch_array($rec))
  <p>
 <label>Tela</label><p>
 	<select id="campo1" name="campo1" />
-<option>Rigida</option>		
+<option>Rigida</option>
 <option>Strech</option>
 	</select>
 
@@ -97,9 +97,9 @@ while($row=mysql_fetch_array($rec))
 <br />
 
 <label>Metros de ancho</label><p>
-        <input id="metros-ancho" name="metros-ancho"  type="number" step="0.01" style="height:25px" required/>
+        <input id="metros-ancho" name="metros-ancho"  type="number" step="0.01" value="0" style="height:25px" >
 </p>
-<label>Color visible</label><p>	
+<label>Color visible</label><p>
 	<input id="color-visible" name="color-visible"></p>
 
 <input type='button' id='agregar-rollo-registro' class='btn btn-primary' value='Agregar Rollo'>
