@@ -3,7 +3,7 @@
     function sumatoriaEntradasFabrics() {
         var totalRollos = 0, totalMetros = 0;
         $("#ingreso-datos > tbody > tr").each(function(key, value) {
-            totalMetros += parseInt($(this).find("td:eq(2) > input").val());
+            totalMetros += parseFloat($(this).find("td:eq(2) > input").val());
             totalRollos++;
         });
         $("#suma-entradas-fabrics").html('Totales: ' + totalRollos + ' Rollos || ' + totalMetros + ' Metros');
@@ -19,16 +19,16 @@
         $("#form-datos").find("#ingreso-datos > tbody > tr").each(function(){
 
             if (typeof($(this).find("td:eq(1) span.valor-codigo").html()) !== "undefined") {
-                
+
                 if ($(this).find("td:eq(1) span.valor-codigo").html().substring(0,6) === codigo) {
                     contador = $(this).find("td:eq(1) span.valor-codigo").html().substr(9,3);
-                } 
+                }
             } else {
                 $(this).remove();
             }
         });
 
-        return parseInt(contador) + 1;
+        return parseFloat(contador) + 1;
     }
 
     function iniciarCapturaEntrada(){
@@ -49,7 +49,7 @@
                         codigo = $obj.find('#codigo-a-buscar').val();
                         metros = $obj.find('#metros-en').val();
 
-                        if (codigo !== "" && metros !== "" && $.isNumeric(codigo) && $.isNumeric(metros)) {
+                        if (codigo !== "" && metros !== "" && $.isNumeric(codigo) && metros > 0) {
 
                             $.ajax({
                                 url: 'administrador/movimientos/registroAjax.php',
@@ -58,14 +58,14 @@
                                 dataType: 'json',
                                 success: function (data) {
                                     if (data.success) {
-                                        if (metros !== "" && metros.length === 3 && $.isNumeric(metros)) {
+                                        if (metros !== ""  && $.isNumeric(metros)) {
                                             var diff = 1;
-                                            
-                                            if (verificarCodigo(codigo) > parseInt(data.contador)) {
-                                                diff = verificarCodigo(codigo) - parseInt(data.contador);
+
+                                            if (verificarCodigo(codigo) > parseFloat(data.contador)) {
+                                                diff = verificarCodigo(codigo) - parseFloat(data.contador);
                                             }
 
-                                            var consecutivo = parseInt(data.contador) + diff;
+                                            var consecutivo = parseFloat(data.contador) + diff;
                                             if (consecutivo.toString().length === 1) {consecutivo = '00' + consecutivo;} else
                                             if (consecutivo.toString().length === 2) {consecutivo = '0' + consecutivo;}
 
@@ -80,7 +80,7 @@
                                             +"</tr>";
 
                                             $("#form-datos").find("#ingreso-datos > tbody").append(campos);
-                                            
+
                                             var ob = $("#form-datos").find("#ingreso-datos > tbody > tr:last");
                                             var $this = ob.find(".codigo-barras-keyup"),
                                             text = $this.val(),
@@ -97,7 +97,7 @@
                                             var nuevoValor = ob.find('.codigo-imagen').find("div").last().html()
                                             ob.find(".codigo-barras-keyup").val(nuevoValor);
                                             ob.find(".valor-codigo").html(nuevoValor);
-                                            
+
                                             $obj.find('#metros-en').val('');
                                             $obj.find('#metros-en').focus();
 
@@ -105,7 +105,7 @@
 
                                             sumatoriaEntradasFabrics();
                                         } else {
-                                            alert("Numero de metros no valido, solo se permiten numeros y 3 caracteres como maximo");    
+                                            alert("Numero de metros no valido, solo se permiten numeros y 3 caracteres como maximo");
                                             $obj.find('#metros-en').val('');
                                             $obj.find('#metros-en').focus();
                                         }
@@ -129,8 +129,8 @@
 
                     e.preventDefault();
 
-                    }                            
-                    
+                    }
+
                 }
             }
 
