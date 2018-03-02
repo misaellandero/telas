@@ -36,7 +36,7 @@
             state0: {
                 title: 'Capture Codigo',
                 html:'<label><input id="codigo-a-buscar">Codigo De Tela</label>'
-                    + '<label><input id="metros-en" maxlength="3">Metros del Rollo</label>',
+                    + '<label><input id="metros-en" >Metros del Rollo</label>',
                 buttons: { Agregar: 1, Listo: 2 },
                 focus: 0,
                 submit:function(e, v, m, f){
@@ -69,7 +69,7 @@
                                             if (consecutivo.toString().length === 1) {consecutivo = '00' + consecutivo;} else
                                             if (consecutivo.toString().length === 2) {consecutivo = '0' + consecutivo;}
 
-                                            var codi = codigo + metros + consecutivo;
+                                            var codi = codigo + parseInt(metros) + consecutivo;
 
                                             campos = "<tr>"
                                             +"<td><button type='button' class='btn btn-danger' onclick=eliminarEntrada($(this))>Eliminar</button><p></td>"
