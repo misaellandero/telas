@@ -63,6 +63,8 @@ while($row=mysql_fetch_array($rec))
 		<option>Algodon</option>
 		<option>Spandex</option>
 		<option>Poliester</option>
+    <option>Viscosa</option>
+      <option>Elastano</option>
 	</select>
 	<input id="compo-telap2" name="compo-telap2" > %
 	<select id="compo-tela-s2" name="compo-tela-s2">
