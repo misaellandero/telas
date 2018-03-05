@@ -328,7 +328,7 @@ $("#ean13Message")
 								$.each(data, function(i, item){
 									rollo += '<hr style="border:1px dashed black;"><div class="rollos-busqueda" style="width:100%;">'
 										+ '<div class="contenedor">'
-										+ '<div>Rollo</div>'
+										+ '<div class="dato0">Rollo</div>'
 										+ '<div><span class="dato1" style="display:none"> ' + tr.find("td:eq(2)").html() + '</span></div>'
 										+ '<div><span class="dato2" style="display:none"> ' + tr.find("td:eq(3)").html() + '</span></div>'
 										+ '<div><span class="dato3"> ' + item.fecha_creacion +'</span> </div>'
@@ -365,13 +365,16 @@ $("#ean13Message")
 								$(this).find('.imprimir').click(function(){
 									var ob = $(this).closest('.rollos-busqueda').clone();
 									ob.find('.imprimir').remove();
-									//ob.find(".tipo").show();
+									ob.find(".dato0").remove();
+                  ob.find(".dato1").remove();
+                  ob.find(".dato2").remove();
+                  ob.find(".dato3").remove();
 									//ob.find(".color").show();
 									//ob.find(".item-anchura").show();
 									// ob.find('.rollo-codigo-busqueda').attr("style", "width:10%;margin-left:45%");
 									//ob.find(".item-compo").attr("style", "");
 									w=window.open();
-									w.document.write($("head").html());
+									//w.document.write($("head").html());
 								  w.document.write( " <div class='col-xs-12'> <div class='center-block'>"+ob.html()+"</div></div> ");
 
 								})
