@@ -36,7 +36,9 @@
             state0: {
                 title: 'Capture Codigo',
                 html:'<label><input id="codigo-a-buscar">Codigo De Tela</label>'
-                    + '<label><input id="metros-en" >Metros del Rollo</label>',
+                    + '<label><input id="metros-en" >Metros del Rollo</label>'
+                    + '<label><input id="detalles-en">Detalles</label><label></label>',
+
                 buttons: { Agregar: 1, Listo: 2 },
                 focus: 0,
                 submit:function(e, v, m, f){
@@ -48,7 +50,7 @@
                         $obj = $(m[0]);
                         codigo = $obj.find('#codigo-a-buscar').val();
                         metros = $obj.find('#metros-en').val();
-
+                        var detalles = $obj.find('#detalles-en').val();
                         if (codigo !== "" && metros !== "" && $.isNumeric(codigo) && metros > 0) {
 
                             $.ajax({
@@ -71,10 +73,12 @@
 
                                             var codi = codigo + parseInt(metros) + consecutivo;
 
+
                                             campos = "<tr>"
                                             +"<td><button type='button' class='btn btn-danger' onclick=eliminarEntrada($(this))>Eliminar</button><p></td>"
                                             +"<td><input type='hidden' class='codigo-barras-keyup' name='codigo[]' value='" +  codi + "' /><span class='valor-codigo'>" + codi + "</span></td>"
                                             +"<td><input type='hidden' name='cantidad[]' value='" +  metros + "' />" +  metros + "</td>"
+                                            +"<td><input type='hidden' name='cadetalles[]' value='" +  detalles + "' />" +  detalles + "</td>"
                                             +"<td><input type='hidden' name='id-art-tela[]' value='" +  data.id_art_telas + "' />" + data.id_art_telas + "</td>"
                                             +"<td><div class='codigo-imagen'/></div></td>"
                                             +"</tr>";
@@ -162,6 +166,7 @@
                     <th>Acciones</th>
                     <th>Codigo</th>
                     <th>Metros</th>
+                    <th>Detalles</th>
                     <th>Id Tela</th>
                     <th>Imagen Codigo</th>
                 </tr>
