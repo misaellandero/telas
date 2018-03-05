@@ -375,8 +375,8 @@ $("#ean13Message")
 									w.document.write($("head").html());
 									w.document.write("<div style='margin-left:20px;margin-top:-60px;'></div>")
 
-									w.document.write("<table style='text-align:center;margin-top:-50px'><tr><td style='height:288px;white-space:nowrap'>" + ob.html() + "</td></tr></table>");
-									w.document.write("<div><input type='button' value='Imprimir' class='btn btn-success' onclick='window.print();'></div>");
+									w.document.write("<table style='text-align:center;margin-top:-50px'><tr><td style='height:100px;white-space:nowrap'>" + ob.html() + "</td></tr></table>");
+
 								})
 							});
 

@@ -14,7 +14,7 @@ $id_art_tela = $_POST['id-art-tela'];
 $codigo = $_POST['codigo'];
 // $Producto = $_POST['Producto'];
 // $tipo = $_POST['tipo'];
-// $Descripcion = $_POST['Descripcion'];
+$detalles = $_POST['detalles'];
 // $talla = $_POST['talla'];
 $Cantidad= $_POST['cantidad'];
 $tipo = $_POST["tipo-movimiento"];
@@ -36,8 +36,8 @@ for($i = 0; $i<count($codigo); $i++) {
 	}
 
 
-	$sql = "Insert Into hist_mov_ent_sal_telas (codigo_id,tipo_mov,cantidad,usuario)
-		values('" . $codigo[$i] . "','".$tipo."', " .$Cantidad[$i] . ",'".$usuario."');";
+	$sql = "Insert Into hist_mov_ent_sal_telas (codigo_id,tipo_mov,cantidad,usuario,detalles)
+		values('" . $codigo[$i] . "','".$tipo."', " .$Cantidad[$i] . ",'".$usuario."','".$detalles[$i]."');";
 	$retval = mysql_query( $sql);
 	if (!$retval){
 		echo mysql_error();

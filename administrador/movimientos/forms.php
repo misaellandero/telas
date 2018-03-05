@@ -20,7 +20,8 @@
                 title: 'Capture Codigo',
                 html:'<label><input id="codigo-a-buscar-salida">Codigo del Rollo</label>'
                     + '<div id ="metros-opciones"><label><input type="checkbox" id="todo-rollo-salida">Todo el rollo?</label>'
-                    + '<label><input id="metros-sa">Metros del rollo</label><label></label>',
+                    + '<label><input id="metros-sa">Metros del rollo</label><label></label>'
+                    + '<label><input id="detalles-sa">Detalles</label><label></label>',
                 buttons: { Agregar: 1, Listo: 2 },
                 focus: 0,
                 submit:function(e,v,m,f){
@@ -32,7 +33,7 @@
                         $obj = $(m[0]);
                         var codigo = $obj.find('#codigo-a-buscar-salida').val();
                         var metros = $obj.find('#metros-sa').val();
-
+                        var detalles = $obj.find('#detalles-sa').val();
                         var todoRollo = ($obj.find("#todo-rollo-salida"));
 
                         if (codigo !== "" && metros !== "" && $.isNumeric(codigo) && $.isNumeric(metros)) {
@@ -49,6 +50,7 @@
                                         +"<td><button type='button' class='btn btn-danger' onclick=eliminarSalida($(this))>Eliminar</button><p></td>"
                                         +"<td><input type='hidden' placeholder='Codigo' name='codigo[]' value='" +  data.codigo + "' />" + data.codigo + "</td>"
                                         +"<td><input type='hidden' placeholder='Metros' name='cantidad[]' value='" +  metros + "' />" +  metros + "</td>"
+                                        +"<td><input type='hidden' placeholder='detalles' name='detalles[]' value='" +  detalles + "' />" +  detalles + "</td>"
                                         +"<td><input type='hidden' placeholder='Codigo' name='id-art-tela[]' value='" +  data.id_art_telas + "' />" + data.id_art_telas + "</td>"
                                         +"</tr>";
 
@@ -167,6 +169,7 @@
                     <th>Acciones</th>
                     <th>Codigo</th>
                     <th>Metros</th>
+                    <th>Detalles</th>
                     <th>Id Tela</th>
                 </tr>
             </thead>
