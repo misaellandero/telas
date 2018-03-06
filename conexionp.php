@@ -1,6 +1,6 @@
 <?php
 
-$host = "sql132.main-hosting.eu";
+$host= "sql132.main-hosting.eu";
 $user = "u315449203_sis";
 $pw = "9Fv5ZKEJagqh";
 $db = "u315449203_sis";
@@ -13,4 +13,9 @@ $db = "u315449203_sis";
 
 		}
 	}
+
+
+		return new PDO('mysql:host='.$host.';dbname='.$db,$user,$pw);
+
+
 ?>

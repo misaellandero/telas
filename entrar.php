@@ -231,6 +231,9 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
   #demo-content {
     padding-top: 0px;
   }
+  body{
+    margin: 4%;
+  }
   </style>
 </head>
 <body class="demo">
@@ -680,7 +683,7 @@ window.onload=function(){startTime();}
   <div >
           <h3>Rollos</h3><caption><h4>Lista de salidas y entradas al sistema </h4></caption>
         <table id="tp" class="table" cellspacing="0" width="100%" border="1px">
-          <thead><tr><th>Id</th><th>Codigo rollo</th><th>tipo movimiento</th><th>metros</th><th>usuario</th><th>fecha</th></tr></thead>
+          <thead><tr><th>Id</th><th>Codigo rollo</th><th>tipo movimiento</th><th>metros</th><th>usuario</th><th>fecha</th><th>Detalles</th></tr></thead>
           <tbody>
              <?php
 
@@ -689,11 +692,13 @@ window.onload=function(){startTime();}
 
                 while ($fila = mysql_fetch_array($resultado)) {
                   echo " <tr>";
-                  echo "<td> $fila[id]  </td> <td> $fila[codigo_id] </td><td> $fila[tipo_mov] </td><td> $fila[cantidad] </td><td> $fila[usuario] </td><td> $fila[fecha] </td>";
+                  echo "<td> $fila[id]  </td> <td> $fila[codigo_id] </td><td> $fila[tipo_mov] </td><td> $fila[cantidad] </td><td> $fila[usuario] </td><td> $fila[fecha] </td><td class='campo_actualizable'>  <textarea class='form-control campo' rows='5' > $fila[detalles] </textarea>
+                    <button data-id='$fila[id]' class='actualizar_campo btn btn-success'>Actualizar</button>  </td>";
                   echo " </tr>";
                 }
 
-             ?></tbody></table>
+             ?></tbody>
+           </table>
 
           </div>
 

@@ -686,4 +686,32 @@ $("#searchBarcode").barcode(MYVALOR, "ean13",{barWidth:1, barHeight:50, output: 
 		event.preventDefault();
 	});
 
+  function actualizarCampo(tabla,campo,id,valor) {
+
+    $.get('update_campo.php', {
+            id: id,
+            valor:valor,
+            tabla:tabla,
+            campo:campo
+        },
+        function(respuesta) {
+
+            if (respuesta == 1) {
+              alert('Actualización Existosa');
+            } else {
+              alert('La Actualización Fallo' + respuesta);
+            }
+
+
+        });
+
+  }
+
+  $("#tp > tbody").on('click','.campo_actualizable .actualizar_campo',function(){
+    var valor = $(this).siblings('textarea').val();
+    var id = $(this).data('id');
+    actualizarCampo('hist_mov_ent_sal_telas','detalles',id,valor);
+  });
+
+
 })
