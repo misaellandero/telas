@@ -1,6 +1,6 @@
 <?php
 
-$host= "sql132.main-hosting.eu";
+$host= "localhost";
 $user = "u315449203_sis";
 $pw = "9Fv5ZKEJagqh";
 $db = "u315449203_sis";

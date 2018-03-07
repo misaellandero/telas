@@ -162,18 +162,12 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 	<script src="scripts/jjquery-ui.js"></script>
 	<script src="scripts/jquery-barcode.js"></script>
   <script src="scripts/jquery-impromptu.js"></script>
-  <script src="/PC/js/canvasResize/canvasResize.js"></script>
-  <script src="/PC/js/canvasResize/zepto.min.js"></script>
-  <script src="/PC/js/canvasResize/binaryajax.js"></script>
-  <script src="/PC/js/canvasResize/exif.js"></script>
-
+ 
 
 
  <link href="../css/fontello.css" rel="stylesheet">
-   <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="styles/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -198,8 +192,7 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 
  <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
-  <script src="../js/vendor/modernizr-2.6.2.min.js"></script>
-  <style type="text/css">
+   <style type="text/css">
   .back-link a {
     color: #4ca340;
     text-decoration: none;
@@ -703,7 +696,7 @@ window.onload=function(){startTime();}
           </div>
 
      </article>
-</section> 
+</section>
 <div align="center"> <p><h2><img src="../images/logo.png" alt="" width="5%"> <h4 id="titleContento">LanderCorp.mx</h4> &reg 2015<p> </div>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Signin Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>

@@ -162,14 +162,16 @@ $res_pestanas = mysql_query($sql);
     <link rel="icon" href="Signin Template for Bootstrap_files/favicon.png">
 
     <title>Ingreso al sistema</title>
+    <!-- Bootstrap core CSS  -->
+    <link href="styles/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    Custom styles for this template
     <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="./Signin Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
 
