@@ -2,7 +2,7 @@
 
 $host= "localhost";
 $user = "u315449203_sis";
-$pw = "9Fv5ZKEJagqh";
+$pw = "CornComputerInc1*";
 $db = "u315449203_sis";
 
 	class conexion{
