@@ -141,8 +141,8 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 
 <head>
 
-  <link rel="icon" href="../Signin Template for Bootstrap_files/favicon.png">
-     <meta charset="utf-8">
+  <link rel="icon" href="../Signin Template for Bootstrap_files/favicon.png"> 
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Inventario Telas</title>
     <link rel="stylesheet" type="text/css" href="styles/normalize.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -162,7 +162,7 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
 	<script src="scripts/jjquery-ui.js"></script>
 	<script src="scripts/jquery-barcode.js"></script>
   <script src="scripts/jquery-impromptu.js"></script>
- 
+
 
 
  <link href="../css/fontello.css" rel="stylesheet">
