@@ -78,8 +78,8 @@ $query = @mysql_query('SELECT * FROM art_telas WHERE codigo = '.$Id);
 
 if (!$existe = mysql_fetch_object($query)) {
 
-	$meter = mysql_query('INSERT INTO art_telas (codigo,proveedor,tipo,nombre,metros, composicion_tela, campo1, metros_ancho, color_visible, img)
-		values ("'.$Id.'", "' . $proveedor . '" ,"'.$tipo.'", "'.$tela.'", "'.array_sum($metrosCodigosNoExistentes).'", "'.$compTelaTotal.'", "' . $campo1 .'", "' . $metrosAncho . '", "' . $color . '", "files/'.$valor.'")');
+	$meter = mysql_query('INSERT INTO art_telas (metros_a,codigo,proveedor,tipo,nombre,metros, composicion_tela, campo1, metros_ancho, color_visible, img)
+		values (0,"'.$Id.'", "' . $proveedor . '" ,"'.$tipo.'", "'.$tela.'", "'.array_sum($metrosCodigosNoExistentes).'", "'.$compTelaTotal.'", "' . $campo1 .'", "' . $metrosAncho . '", "' . $color . '", "files/'.$valor.'")');
 	$id_art = mysql_insert_id();
 	if($meter)
 	{
