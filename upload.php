@@ -2,7 +2,8 @@
     <input type="hidden" name="data_img" class="data_img" value="" />
 	<input type="hidden" name="name_img" class="name_img" value="" />
 
-	<p><label>Nombre de imagen</label></p><p><input id="nombre" name="nombre" placeholder="Nombre de imagen" value="noImage" required></p>
+	<p><label>Nombre de imagen</label></p><p>
+    <input id="nombre" name="nombre" placeholder="Nombre de imagen" value="noImage" required></p>
 
         <p><label>Ubicacion Archivo Original</label> 	<p>
 		<input type="file"  id="archivo" name="archivo">

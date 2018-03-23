@@ -1,6 +1,9 @@
 <?php
 require_once('funciones.php');
-conectar('localhost', 'u722193362_date','03032014','u722193362_root');
+require 'conexionp.php';
+
+conectar($host,$user,$pw,$db);
+
 ?>
 
 <form id="registro-producto" action="registro.php" method="POST" enctype="multipart/form-data" >
