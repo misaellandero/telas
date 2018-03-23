@@ -1,11 +1,3 @@
-<?php
-require_once('funciones.php');
-require 'conexionp.php';
-
-conectar($host,$user,$pw,$db);
-
-?>
-
 <form id="registro-producto" action="registro.php" method="POST" enctype="multipart/form-data" >
 
 

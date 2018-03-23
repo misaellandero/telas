@@ -153,9 +153,9 @@ $totalRows_consulta_usuario = mysql_num_rows($consulta_usuario);
   <link rel="stylesheet" type="text/css" href="styles/jquery-impromptu.css">
 
 
+  <script src="scripts/jquery.js"></script>
 	<script src="scripts/jquery.dataTables.js"></script>
 	<script src="scripts/jquery-ui-1.10.3.custom.js"></script>
-	<script src="scripts/jquery.js"></script>
 	<script src="scripts/functions.js"></script>
 	<script src="scripts/prefixfree.min.js"></script>
 	<script src="scripts/datatables.js"></script>
@@ -706,8 +706,7 @@ window.onload=function(){startTime();}
   <!-- /Demo content -->
 
 
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-  <script src="../js/main.js"></script>
+   <script src="../js/main.js"></script>
 
 </body>
 </html>
